@@ -1,15 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="scriptFact.js"></script>
+    <title>Factorial</title>
 </head>
 <body>
-    <form>
-        Introduce un numero para calcular su factorial: <input type="number" id="numero" min="0" step="1" required>
-        <button type="button" onclick="calcularFactorial(document.getElementById('numero').value)">Calcular Factorial</button>
+    <form id="factorialForm">
+        Introduce un número para calcular su factorial:
+        <input type="number" id="numero" min="0" step="1" required>
+        <button type="submit">Calcular Factorial</button>
     </form>
+
+    <p id="resultado"></p>
+
+    <script src="scriptFact.js"></script>
+    <script>
+        document.getElementById('factorialForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const input = document.getElementById('numero');
+            const resultado = calcularFactorial(input.value);
+            const salida = document.getElementById('resultado');
+
+            if (typeof resultado === 'number') {
+                salida.textContent = 'El factorial es: ' + resultado;
+            } else {
+                salida.textContent = resultado;
+            }
+        });
+    </script>
 </body>
 </html>

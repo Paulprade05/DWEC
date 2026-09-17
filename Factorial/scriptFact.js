@@ -7,24 +7,29 @@ function calcularFactorial(numero) {
 
     // Comprueba si el campo está vacío o si el valor no es un número válido.
     if (valor === "" || valor === null || valor === undefined || !Number.isFinite(numeroValido)) {
-        alert("Por favor, ingrese un número válido.");
-        return "Por favor, ingrese un número válido.";
+        const mensaje = "Por favor, ingrese un número válido.";
+        console.log(mensaje);
+        return mensaje;
     }
 
     // Comprueba que el número sea entero, porque el factorial no se define para decimales.
     if (!Number.isInteger(numeroValido)) {
-        alert("El factorial solo se puede calcular con números enteros.");
-        return "El factorial solo se puede calcular con números enteros.";
+        const mensaje = "El factorial solo se puede calcular con números enteros.";
+        console.log(mensaje);
+        return mensaje;
     }
 
     // Evita que se introduzcan números negativos.
     if (numeroValido < 0) {
-        alert("El factorial no está definido para números negativos.");
-        return "El factorial no está definido para números negativos.";
+        const mensaje = "El factorial no está definido para números negativos.";
+        console.log(mensaje);
+        return mensaje;
     }
 
     // Caso base: factorial de 0 y 1 es 1.
     if (numeroValido === 0 || numeroValido === 1) {
+        const mensaje = "El factorial de " + numeroValido + " es: 1";
+        console.log(mensaje);
         return 1;
     }
 
@@ -34,7 +39,8 @@ function calcularFactorial(numero) {
         resultado *= i;
     }
 
-    // Muestra el resultado final con una alerta.
-    alert("El factorial de " + numeroValido + " es: " + resultado);
+    // Muestra el resultado final en la consola.
+    const mensaje = "El factorial de " + numeroValido + " es: " + resultado;
+    console.log(mensaje);
     return resultado;
 }
