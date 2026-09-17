@@ -1,19 +1,31 @@
 function calcularFactorial(numero) {
-    if (numero < 0) {   
-        return "El factorial no está definido para números negativos.";
-    } else if (numero === 0 || numero === 1) {
-        return 1;
-        
-    } else if(isNaN(numero)) {
+    const valor = typeof numero === "string" ? numero.trim() : numero;
+    const numeroValido = Number(valor);
+
+    if (valor === "" || valor === null || valor === undefined || !Number.isFinite(numeroValido)) {
+        alert("Por favor, ingrese un número válido.");
         return "Por favor, ingrese un número válido.";
     }
-    else {
-        let resultado = 1;
-        for (let i = 2; i <= numero; i++) {
-            resultado *= i;
-        }
-        alert("El factorial de " + numero + " es: " + resultado);
-        return resultado;
+
+    if (!Number.isInteger(numeroValido)) {
+        alert("El factorial solo se puede calcular con números enteros.");
+        return "El factorial solo se puede calcular con números enteros.";
     }
-    
+
+    if (numeroValido < 0) {
+        alert("El factorial no está definido para números negativos.");
+        return "El factorial no está definido para números negativos.";
+    }
+
+    if (numeroValido === 0 || numeroValido === 1) {
+        return 1;
+    }
+
+    let resultado = 1;
+    for (let i = 2; i <= numeroValido; i++) {
+        resultado *= i;
+    }
+
+    alert("El factorial de " + numeroValido + " es: " + resultado);
+    return resultado;
 }

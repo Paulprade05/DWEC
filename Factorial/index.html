@@ -7,9 +7,8 @@
     <script src="scriptFact.js"></script>
 </head>
 <body>
-    <p id="mitexto">HOLA</p>
     <form>
-        Introduce un numero para calcular su factorial: <input type="number" id="numero">
+        Introduce un numero para calcular su factorial: <input type="number" id="numero" min="0" step="1" required>
         <button type="button" onclick="calcularFactorial(document.getElementById('numero').value)">Calcular Factorial</button>
     </form>
 </body>
