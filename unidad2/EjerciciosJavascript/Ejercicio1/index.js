@@ -7,9 +7,14 @@ function contarVocales(cadena) {
             contador++;
         }
     }
-    console.log(contador)
-
+    
+    alert("Número de vocales: " + contador);
     return contador;
 }
 
-contarVocales("alieeurtjyufbfweblaweuf")
+// Evento del formulario para probarlo fácilmente
+document.getElementById("formulario").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const texto = document.getElementById("texto").value;
+    contarVocales(texto);
+});

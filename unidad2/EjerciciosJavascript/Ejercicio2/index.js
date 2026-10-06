@@ -1,12 +1,16 @@
 function pinValido(pin) {
-
     if (pin.toString().length === 4) {
-        console.log(true)
+        alert(true);
+        return true;
     } else {
-        console.log(false)
+        alert(false);
+        return false;
     }
-
-
 }
 
-pinValido(3345)
+// Evento del formulario para probarlo fácilmente
+document.getElementById("formulario").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const pin = document.getElementById("pin").value;
+    pinValido(pin);
+});

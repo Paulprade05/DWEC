@@ -19,7 +19,14 @@ function numRepeticiones(numeros) {
         }
     }
 
-    console.log(numeroMenosRepetido);
+    alert("El número menos repetido es: " + numeroMenosRepetido);
+    return numeroMenosRepetido;
 }
 
-numRepeticiones([1, 2, 3, 4, 2, 4, 3, 3, 1, 5, 6, 7,])
+// Evento del formulario para probarlo fácilmente
+document.getElementById("formulario").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const texto = document.getElementById("numeros").value;
+    const arrayNumeros = texto.split(",").map(n => Number(n.trim())).filter(n => !isNaN(n));
+    numRepeticiones(arrayNumeros);
+});

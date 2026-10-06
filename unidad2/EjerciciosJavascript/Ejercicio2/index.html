@@ -1,15 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="index.js"></script>
+    <title>Ejercicio 2 - Validar PIN</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 30px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 450px;
+        }
+
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
+    <h1>Ejercicio 2: Validar PIN</h1>
+    
+    <form id="formulario">
+        <label for="pin">Introduce el PIN:</label>
+        <input type="text" id="pin" value="3345" required>
+        <button type="submit">Validar PIN</button>
+    </form>
 
+    <script src="index.js"></script>
 </body>
 
 </html>
