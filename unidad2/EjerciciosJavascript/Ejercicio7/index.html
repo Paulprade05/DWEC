@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7 - Índice de Equilibrio</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 30px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 480px;
+        }
+
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .nota {
+            font-size: 14px;
+            color: #555;
+            margin-top: -6px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicio 7: Índice de Equilibrio en un Array</h1>
+
+    <form id="formulario">
+        <label for="arrayNumeros">Introduce números enteros separados por comas:</label>
+        <input type="text" id="arrayNumeros" value="1, 2, 3, 4, 3, 2, 1" required>
+        <span class="nota">Ejemplos: "1, 2, 3, 4, 3, 2, 1" (da 3), "20, 10, -80, 10, 10, 15, 35" (da 0)</span>
+        <button type="submit">Buscar índice</button>
+    </form>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
