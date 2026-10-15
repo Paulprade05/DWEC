@@ -21,7 +21,7 @@ function contruirTarea() {
 }
 
 function filtrarTareas(lista) {
-    criterio = document.getElementById("tipoFiltrado").
+    criterio = document.getElementById("tipoFiltrado")
     return lista.filter(tarea => {
         if (criterio === "completadas") {
             return tarea.estado === "completada";
