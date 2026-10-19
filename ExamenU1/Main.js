@@ -1,20 +1,22 @@
-countGoodPairs("1, a, 3, 1, 1, 3");
+countGoodPairs("1, 2, 3, 1, 1, 3");
 
 
 function countGoodPairs(lista) {
+    const element = document.getElementById("div1");
     let nums = [];
-    //let lista = prompt("Introduce la secuenca de numeros separados por coma:");
+    //const lista = prompt("Introduce la secuenca de numeros separados por coma:");
     let numeros = lista.split(",");
 
     for (let i = 0; i < numeros.length; i++) {
-        if (!isNaN(numeros[i].trim)) {
-            console.log("Numero no valido");
-            document.getElementById("errores").innerHTML = numeros[i] + "No es un numero válido";
-            continue;
+        let valor = numeros[i].trim();
+        let numero = numeros[valor]
+        if (valor === "" || isNaN(numero)) {
+            const paraError = document.createElement("p");
+            const nodeError = document.createTextNode("El valor '" + valor + "' no es un numero.");
+            paraError.appendChild(nodeError);
+            element.appendChild(paraError);
         } else {
-            nums.push(Number(numeros[i].trim()));
-
-
+            nums.push(numero);
         }
     }
     console.table(nums);
@@ -26,9 +28,13 @@ function countGoodPairs(lista) {
                 paresBuenos++;
         }
     }
-    let salida = "Numeros de pares buenos: " + paresBuenos;
-    console.log(salida);
-    document.getElementBy("p0").innerHTML = salida;
-    console.log(paresBuenos);
-    document.getElementById("p1").innerHTML = nums;
+
+    const paraLista = document.createElement("p");
+    const nodeLista = document.createTextNode("Lista: " + nums.join(", "));
+    paraLista.appendChild(nodeLista);
+    element.appendChild(paraLista);
+    const paraPares = document.createElement("p");
+    const nodePares = document.createTextNode("Numero de pares buenos: " + paresBuenos);
+    paraPares.appendChild(nodePares);
+    element.appendChild(paraPares);
 }
