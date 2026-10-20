@@ -14,11 +14,11 @@ class GestorVentanaEmergente {
     this.referencia = window.open(url, "VentanaCentrada", specs);
 
     if (!this.referencia) {
-      console.error("❌ Ventana bloqueada. Por favor, habilite los popups en la barra de direcciones.");
+      console.error("Ventana bloqueada. Por favor, habilite los popups en la barra de direcciones.");
       return false;
     }
 
-    console.log("✅ Ventana abierta con éxito en posición:", { left, top });
+    console.log("Ventana abierta con éxito en posición:", { left, top });
     return true;
   }
 

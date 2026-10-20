@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abrir Ventana Centrada</title>
 </head>
+
 <body>
 
   <button id="btnAbrir">Abrir ventana emergente centrada</button>
+  <button id="btnCerrar">Cerrar</button>
 
   <script src="./gestorPrevisualizacion.js"></script>
   <script>
     document.getElementById('btnAbrir').addEventListener('click', () => {
       gestor.abrirCentrada();
     });
+    document.getElementById('btnCerrar').addEventListener('click', () => {
+      gestor.cerrar();
+    });
   </script>
 
 </body>
+
 </html>
