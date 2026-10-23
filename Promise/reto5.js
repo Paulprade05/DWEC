@@ -59,12 +59,4 @@ async function pedirConfirmacion(mensaje) {
     });
 }
 
-// Ejemplo de uso:
-// (async () => {
-//     const acepto = await pedirConfirmacion("¿Estás seguro de que quieres borrar este elemento?");
-//     if (acepto) {
-//         console.log("Acción confirmada");
-//     } else {
-//         console.log("Acción cancelada");
-//     }
-// })();
+
