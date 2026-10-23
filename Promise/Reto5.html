@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto 5 - Gestor de Modales</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Prueba de Modales con &lt;dialog&gt;</h1>
+        <p>Haz clic en el botón para iniciar la acción confirmada por Promesa.</p>
+        <button id="actionBtn">Ejecutar Acción</button>
+        <div id="result">Esperando interacción...</div>
+    </div>
+
+    <!-- Importamos el script del reto -->
+    <script src="reto5.js"></script>
+    
+    <script>
+        const btn = document.getElementById('actionBtn');
+        const resultDiv = document.getElementById('result');
+
+        btn.addEventListener('click', async () => {
+            resultDiv.textContent = "Esperando respuesta...";
+            
+            // Llamamos a la función definida en reto5.js
+            const acepto = await pedirConfirmacion("¿Deseas proceder con la operación de prueba?");
+            
+            if (acepto) {
+                resultDiv.style.color = "green";
+                resultDiv.textContent = "¡Acción confirmada con éxito!";
+                console.log("Usuario aceptó");
+            } else {
+                resultDiv.style.color = "red";
+                resultDiv.textContent = "Acción cancelada por el usuario.";
+                console.log("Usuario canceló");
+            }
+        });
+    </script>
+</body>
+</html>
