@@ -1,29 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Carrito Persistente</title>
+    <script src="reto5.js"></script>
     <script>
-        let promise = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve("Success");
-            }, 2000);
-            setTimeout(() => {
-                reject("Error");
-            }, 2000);           
+        // Inicializar el carrito persistente
+        const carrito = new CarritoPersistente();
+
+        // Botones para añadir productos al carrito
+        document.addEventListener('DOMContentLoaded', () => {
+            const btnCamiseta = document.getElementById('btn-camiseta');
+            const btnPantalon = document.getElementById('btn-pantalon');
+            const btnZapatos = document.getElementById('btn-zapatos');
+
+            if (btnCamiseta) {
+                btnCamiseta.addEventListener('click', () => {
+                    carrito.agregarProducto({ id: 1, nombre: 'Camiseta', precio: 29.99 });
+                });
+            }
+
+            if (btnPantalon) {
+                btnPantalon.addEventListener('click', () => {
+                    carrito.agregarProducto({ id: 2, nombre: 'Pantalón', precio: 49.99 });
+                });
+            }
+
+            if (btnZapatos) {
+                btnZapatos.addEventListener('click', () => {
+                    carrito.agregarProducto({ id: 3, nombre: 'Zapatos', precio: 79.99 });
+                });
+            }
+
+            // Botón para vaciar carrito
+            const btnVaciar = document.getElementById('btn-vaciar');
+            if (btnVaciar) {
+                btnVaciar.addEventListener('click', () => {
+                    carrito.vaciarCesta();
+                });
+            }
         });
-
-        promise.then((message) => {
-            console.log(message);
-        }).catch((error) => {
-            console.log(error);
-        });  
-
-
     </script>
 </head>
 <body>
-    
+    <h1>Prueba de Carrito Persistente</h1>
+
+    <h2>Añadir Productos:</h2>
+    <button id="btn-camiseta">Añadir Camiseta (€29.99)</button><br><br>
+    <button id="btn-pantalon">Añadir Pantalón (€49.99)</button><br><br>
+    <button id="btn-zapatos">Añadir Zapatos (€79.99)</button><br><br>
+
+    <h2>Opciones:</h2>
+    <button id="btn-vaciar">Vaciar Carrito</button><br><br>
+
+    <h2>Estado del Carrito:</h2>
+    <p>Total items: <span id="total-items">0</span></p>
+    <p>Productos en carrito: <span id="productos-count">0</span></p>
+    <p id="carrito-info" style="font-style: italic;">Cargando...</p>
+
+    <footer>
+        <!-- El carrito se renderizará aquí -->
+    </footer>
 </body>
 </html>
