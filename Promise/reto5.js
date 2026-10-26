@@ -16,6 +16,7 @@ async function pedirConfirmacion(mensaje) {
         dialog.style.border = '1px solid #ccc';
         dialog.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
         dialog.style.maxWidth = '400px';
+        
 
         const content = document.createElement('div');
         content.innerHTML = `
