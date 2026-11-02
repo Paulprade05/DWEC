@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11 - Cuatro Cuadrados de Lagrange</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 30px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 480px;
+        }
+
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .nota {
+            font-size: 14px;
+            color: #555;
+            margin-top: -6px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicio 11: Teorema de los Cuatro Cuadrados</h1>
+
+    <form id="formulario">
+        <label for="numero">Introduce un número natural:</label>
+        <input type="number" id="numero" value="30" min="0" required>
+        <span class="nota">Ejemplo: 30 = 25 + 4 + 1 + 0</span>
+        <button type="submit">Descomponer</button>
+    </form>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

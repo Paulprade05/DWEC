@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12 - Colorear Triángulo</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 30px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 480px;
+        }
+
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .nota {
+            font-size: 14px;
+            color: #555;
+            margin-top: -6px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicio 12: Colorear Triángulo</h1>
+
+    <form id="formulario">
+        <label for="fila">Primera fila de colores (R, G, B):</label>
+        <input type="text" id="fila" value="RRGBRGBB" required>
+        <span class="nota">Ejemplo: RRGBRGBB da G</span>
+        <button type="submit">Calcular color final</button>
+    </form>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
