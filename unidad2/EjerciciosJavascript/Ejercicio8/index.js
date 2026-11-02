@@ -8,5 +8,5 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
     const bArray = document.getElementById("listaB").value.split(",").map(n => Number(n.trim()));
 
     const resultado = arrayDiff(aArray, bArray);
-    alert("Resultado: [" + resultado.join(", ") + "]");
+    alert("resultado: [" + resultado.join(", ") + "]");
 });

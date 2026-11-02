@@ -16,7 +16,7 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
     const resultado = contarBits(numero);
 
     if (resultado === -1) {
-        alert("Introduce un número entero no negativo");
+        alert("introduce un numero entero no negativo");
     } else {
         alert(`${numero} en binario es ${numero.toString(2)} y tiene ${resultado} bits a uno`);
     }

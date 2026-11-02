@@ -22,7 +22,7 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
     const numero = parseInt(document.getElementById("numero").value, 10);
 
     if (isNaN(numero) || numero < 0) {
-        alert("Introduce un número natural");
+        alert("introduce un numero natural");
         return;
     }
 

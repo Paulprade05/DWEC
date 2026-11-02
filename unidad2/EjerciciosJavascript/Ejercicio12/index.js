@@ -24,9 +24,9 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
     const fila = document.getElementById("fila").value.trim().toUpperCase();
 
     if (!/^[RGB]+$/.test(fila)) {
-        alert("Usa solo las letras R, G y B");
+        alert("usa solo las letras r, g y b");
         return;
     }
 
-    alert(`El color final es: ${colorFinal(fila)}`);
+    alert(`el color final es: ${colorFinal(fila).toLowerCase()}`);
 });

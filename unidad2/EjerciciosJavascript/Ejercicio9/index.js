@@ -13,9 +13,9 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
     const numero = parseInt(document.getElementById("numero").value, 10);
 
     if (isNaN(numero) || numero < 0) {
-        alert("Introduce un número entero no negativo");
+        alert("introduce un numero entero no negativo");
         return;
     }
 
-    alert(`Entrada: ${numero} Salida: ${ordenDescendente(numero)}`);
+    alert(`entrada: ${numero} salida: ${ordenDescendente(numero)}`);
 });
